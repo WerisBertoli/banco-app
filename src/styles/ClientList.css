@@ -1,0 +1,129 @@
+/* src/styles/ClientList.css */
+.client-list {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.client-list h1 {
+  margin-bottom: 20px;
+  color: #007bff;
+  font-size: 28px;
+  text-align: center;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 600px;
+  padding: 12px;
+  margin: 0 auto 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  display: block;
+}
+
+.client-list table {
+  background-color: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+  border-collapse: separate; /* Permite espaçamento entre células */
+  border-spacing: 0 5px; /* Adiciona espaço vertical entre linhas */
+}
+
+/* Estilizar linhas da tabela */
+.client-list table tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+/* Garantir centralização e espaçamento nas células */
+.client-list table th,
+.client-list table td {
+  text-align: center !important; /* Força centralização com maior especificidade */
+  padding: 15px 40px !important; /* Aumenta ainda mais o espaçamento */
+  border: 1px solid #ddd;
+}
+
+/* Centralizar o botão "Ver Detalhes" */
+.client-list table td button {
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+}
+
+.client-list table td button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilizar o contêiner da paginação */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .client-list {
+    padding: 15px;
+  }
+
+  .client-list h1 {
+    font-size: 24px;
+  }
+
+  .search-bar {
+    max-width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .client-list table th,
+  .client-list table td {
+    padding: 10px 20px !important; /* Ajusta o espaçamento para telas menores */
+    font-size: 14px;
+  }
+
+  .client-list table td button {
+    padding: 6px 16px;
+    font-size: 12px;
+  }
+
+  .pagination {
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  .pagination button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
