@@ -33,21 +33,33 @@ export const fetchClientes = async (): Promise<Cliente[]> => {
   return data.map((cliente) => ({
     ...cliente,
     dataNascimento: new Date(cliente.dataNascimento),
-    rendaAnual: Number(cliente.rendaAnual),
-    patrimonio: Number(cliente.patrimonio),
+    rendaAnual: parseFloat(
+      String(cliente.rendaAnual).replace(/[^\d,-]/g, "").replace(".", "").replace(",", ".")
+    ),
+    patrimonio: parseFloat(
+      String(cliente.patrimonio).replace(/[^\d,-]/g, "").replace(".", "").replace(",", ".")
+    ),
     codigoAgencia: Number(cliente.codigoAgencia),
   }));
 };
+
 
 export const fetchContas = async (): Promise<Conta[]> => {
   const data = await fetchCsvData<Conta>(CONTAS_URL);
   return data.map((conta) => ({
     ...conta,
-    saldo: Number(conta.saldo),
-    limiteCredito: Number(conta.limiteCredito),
-    creditoDisponivel: Number(conta.creditoDisponivel),
+    saldo: parseFloat(
+      String(conta.saldo).replace(/[^\d,-]/g, "").replace(".", "").replace(",", ".")
+    ),
+    limiteCredito: parseFloat(
+      String(conta.limiteCredito).replace(/[^\d,-]/g, "").replace(".", "").replace(",", ".")
+    ),
+    creditoDisponivel: parseFloat(
+      String(conta.creditoDisponivel).replace(/[^\d,-]/g, "").replace(".", "").replace(",", ".")
+    ),
   }));
 };
+
 
 export const fetchAgencias = async (): Promise<Agencia[]> => {
   const data = await fetchCsvData<Agencia>(AGENCIAS_URL);
