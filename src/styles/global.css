@@ -6,28 +6,29 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; /* Mantido, mas index.css pode sobrescrever */
   line-height: 1.6;
   color: #333;
   background-color: #ffffff;
+  overflow: hidden; /* Impede scroll na página */
 }
 
 .app {
   width: 100%;
-  min-height: 100vh;
-  padding: 20px 0;
+  height: 100vh; /* Ocupa exatamente a viewport */
+  padding: 10px 0; /* Reduzido para economizar espaço */
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto; /* Scroll interno, se necessário */
 }
 
 table {
   width: 100%;
-  margin: 20px 0;
+  margin: 10px 0; /* Reduzido para economizar espaço */
 }
 
 th, td {
-  /* Removido padding e text-align para evitar conflitos */
   border: 1px solid #ddd;
 }
 
@@ -48,7 +49,7 @@ button:disabled {
 
 @media (max-width: 768px) {
   .app {
-    padding: 10px 0;
+    padding: 5px 0; /* Ainda mais reduzido em mobile */
   }
 
   th, td {

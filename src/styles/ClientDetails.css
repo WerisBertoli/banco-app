@@ -1,3 +1,15 @@
+/* clientdetail.css */
+.client-details {
+  width: 100%;
+  max-width: 1200px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-height: calc(100vh - 20px); /* Alinha com .client-list */
+  overflow-y: auto; /* Scroll interno */
+}
+
 .client-details table {
   width: 100%;
   border-collapse: collapse;
@@ -5,12 +17,14 @@
   background-color: #fff;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.05);
+  max-height: calc(100vh - 100px); /* Ajustado para cabeçalhos e paddings */
+  overflow-y: auto;
 }
 
 .client-details table th,
 .client-details table td {
-  padding: 12px 16px;
+  padding: 10px 14px; /* Reduzido de 12px 16px */
   text-align: left;
   border-bottom: 1px solid #eaeaea;
 }
@@ -26,6 +40,15 @@
 }
 
 @media (max-width: 768px) {
+  .client-details {
+    padding: 10px;
+    max-height: calc(100vh - 10px);
+  }
+
+  .client-details table {
+    max-height: calc(100vh - 80px);
+  }
+
   .client-details table,
   .client-details table thead,
   .client-details table tbody,
@@ -36,7 +59,7 @@
   }
 
   .client-details table tr {
-    margin-bottom: 16px;
+    margin-bottom: 12px; /* Reduzido de 16px */
     border-bottom: 2px solid #f0f0f0;
   }
 
@@ -49,7 +72,7 @@
   .client-details table td::before {
     content: attr(data-label);
     position: absolute;
-    left: 16px;
+    left: 14px;
     width: 45%;
     text-align: left;
     font-weight: bold;

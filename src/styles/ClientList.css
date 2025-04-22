@@ -1,16 +1,21 @@
-/* src/styles/ClientList.css */
+/* clientList.css */
 .client-list {
   background: white;
-  padding: 20px;
+  padding: 15px; /* Reduzido de 20px */
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: 100%;
+  max-width: 1200px;
   box-sizing: border-box;
+  max-height: calc(100vh - 20px); /* Considera padding do .app */
+  overflow-y: auto; /* Scroll interno */
+  display: flex;
+  flex-direction: column;
 }
 
 .client-list h1 {
-  margin-bottom: 20px;
-  color: #007bff;
+  margin-bottom: 15px; /* Reduzido de 20px */
+  color: #0066b3;
   font-size: 28px;
   text-align: center;
 }
@@ -19,111 +24,106 @@
   width: 100%;
   max-width: 600px;
   padding: 12px;
-  margin: 0 auto 20px auto;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  margin: 10px auto; /* Reduzido de 20px */
+  border: 2px solid #ccc;
+  border-radius: 30px;
   font-size: 16px;
   display: block;
 }
 
 .client-list table {
-  background-color: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-  border-collapse: separate; /* Permite espaçamento entre células */
-  border-spacing: 0 5px; /* Adiciona espaço vertical entre linhas */
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  max-height: calc(100vh - 150px); /* Ajustado para h1, search-bar, pagination */
+  overflow-y: auto;
+  display: block; /* Necessário para scroll */
 }
 
-/* Estilizar linhas da tabela */
-.client-list table tr:nth-child(even) {
-  background-color: #f1f1f1;
-}
-
-/* Garantir centralização e espaçamento nas células */
 .client-list table th,
 .client-list table td {
-  text-align: center !important; /* Força centralização com maior especificidade */
-  padding: 15px 40px !important; /* Aumenta ainda mais o espaçamento */
+  text-align: center;
+  padding: 10px 20px; /* Reduzido de 15px 30px */
   border: 1px solid #ddd;
 }
 
-/* Centralizar o botão "Ver Detalhes" */
+.client-list table tr:nth-child(even) {
+  background-color: #eef6ff;
+}
+
 .client-list table td button {
   padding: 8px 20px;
-  background-color: #007bff;
+  background-color: #0066b3;
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s;
-  font-size: 14px;
 }
 
 .client-list table td button:hover {
-  background-color: #0056b3;
+  background-color: #004f87;
 }
 
-/* Estilizar o contêiner da paginação */
+/* Paginação */
 .pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
-  gap: 15px;
+  margin-top: 10px; /* Reduzido de 20px */
+  gap: 10px;
 }
 
 .pagination button {
   padding: 8px 16px;
-  background-color: #007bff;
+  background-color: #0066b3;
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s;
 }
 
 .pagination button:hover {
-  background-color: #0056b3;
+  background-color: #004f87;
 }
 
 .pagination button:disabled {
   background-color: #ccc;
-  cursor: not-allowed;
 }
 
+/* Responsividade */
 @media (max-width: 768px) {
   .client-list {
-    padding: 15px;
+    padding: 10px;
+    max-height: calc(100vh - 10px);
   }
 
   .client-list h1 {
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: 10px;
   }
 
   .search-bar {
-    max-width: 100%;
     padding: 10px;
     font-size: 14px;
+    margin: 8px auto;
+  }
+
+  .client-list table {
+    max-height: calc(100vh - 130px);
   }
 
   .client-list table th,
   .client-list table td {
-    padding: 10px 20px !important; /* Ajusta o espaçamento para telas menores */
+    padding: 8px 10px;
     font-size: 14px;
   }
 
-  .client-list table td button {
-    padding: 6px 16px;
-    font-size: 12px;
-  }
-
   .pagination {
-    margin-top: 20px;
-    gap: 10px;
+    margin-top: 8px;
   }
 
   .pagination button {
-    padding: 6px 12px;
     font-size: 12px;
+    padding: 6px 12px;
   }
 }
